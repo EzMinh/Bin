@@ -1,0 +1,15 @@
+name: Bin
+author: EzMinh
+version: 1.0.0
+api: [3.0.0, 4.0.0]
+main: EzMinh\Bin\Main
+
+commands:
+  bin:
+    description: Remove items
+    permissions: bin.cmd
+
+permissions:
+  bin.cmd:
+    description: Allows player use /bin
+    default: true
