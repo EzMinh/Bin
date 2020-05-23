@@ -14,11 +14,9 @@ class Main extends PluginBase
 {
     public function onEnable()
     {
-        $this->getLogger()->info(C::GREEN . "Enabled" . C::YELLOW . " Bin");
-    }
-    public function onDisable()
-    {
-        $this->getLogger()->info(C::RED . "Disabled" . C::YELLOW . " Bin");
+        @mkdir($this->getDataFolder());
+        $this->saveDefaultConfig();
+        $this->getResource("config.yml");
     }
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args):bool
     {
@@ -48,7 +46,7 @@ class Main extends PluginBase
                             case "hand":
                                 $item = $sender->getInventory()->getItemInHand();
                                 $sender->getInventory()->removeItem($item);
-                                $sender->sendMessage(C::GREEN . "Success!");
+                                $sender->sendMessage($this->getConfig()->get("remove.hand.success"));
                             break;
                             case "inv":
                                 $inv = $sender->getInventory()->getContents();
@@ -56,7 +54,7 @@ class Main extends PluginBase
                                 {
                                     $sender->getInventory()->remove($item);
                                 }
-                                $sender->sendMessage(C::GREEN . "Success!");
+                                $sender->sendMessage($this->getConfig()->get("remove.inv.success"));
                             break;
                         }
                     }
