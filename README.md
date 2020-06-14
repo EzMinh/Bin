@@ -2,7 +2,7 @@
 ![GitHub All Releases](https://img.shields.io/github/downloads/EzMinh/Bin/total)
 ![GitHub](https://img.shields.io/github/license/EzMinh/Bin)
 [![PoggitCI](https://poggit.pmmp.io/shield.state/Bin)](https://poggit.pmmp.io/p/Bin)
-# Bin 1.0.2
+# Bin 1.0.3
 **Remove items in your inventory**
 # How to use
 - Use /bin help
